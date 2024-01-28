@@ -1,11 +1,13 @@
 var config_data = `
 {
+  "enable_google_sheets": "true",
   "dataFormat": "tsv",
   "title": "Scouting PASS 2024",
   "page_title": "Crescendo",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
+      "gsCol": "scouter",
       "code": "s",
       "type": "scouter",
       "size": 5,
@@ -13,12 +15,14 @@ var config_data = `
       "required": "true"
     },
     { "name": "Event",
+      "gsCol": "event",
       "code": "e",
       "type": "event",
       "defaultValue": "2023tnkn",
       "required": "true"
     },
     { "name": "Match Level",
+      "gsCol": "matchLevel",
       "code": "l",
       "type": "level",
       "choices": {
@@ -30,6 +34,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Match #",
+      "gsCol": "matchNum",
       "code": "m",
       "type": "match",
       "min": 1,
@@ -37,6 +42,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Robot",
+      "gsCol": "robotPose",
       "code": "r",
       "type": "robot",
       "choices": {
@@ -50,12 +56,14 @@ var config_data = `
       "required":"true"
     },
     { "name": "Team #",
+      "gsCol": "teamNum",
       "code": "t",
       "type": "team",
       "min": 1,
       "max": 99999
     },
     { "name": "Auto Start Position",
+      "gsCol": "autoStart",
       "code": "as",
       "type": "clickable_image",
       "filename": "2024/field_image.png",
@@ -66,32 +74,39 @@ var config_data = `
   ],
   "auton": [
     { "name": "Leave Starting Zone",
+      "gsCol": "autoLeave",
       "code": "al",
       "type": "bool"
     },
     { "name": "Amp Scores",
+      "gsCol": "autoAmp",
       "code": "aas",
       "type": "counter"
     },
     { "name": "Speaker Scores",
+      "gsCol": "autoSpeaker",
       "code": "ass",
       "type": "counter"
     }
   ],
   "teleop": [
     { "name": "Amp Scores",
+      "gsCol": "teleAmp",
       "code": "tas",
       "type": "counter"
     },
     { "name": "Speaker Scores",
+      "gsCol": "teleSpeaker",
       "code": "tss",
       "type": "counter"
     },
     { "name": "Times Amplified",
+      "gsCol": "teleTimesAmplified",
       "code": "tta",
       "type": "counter"
     },
     { "name": "Pickup From",
+      "gsCol": "pickupFrom",
       "code": "tpu",
       "type": "radio",
       "choices": {
@@ -105,10 +120,12 @@ var config_data = `
   ],
   "endgame": [
     { "name": "Stage Timer",
+      "gsCol": "stageTimer",
       "code": "dt",
       "type": "timer"
     },
     { "name": "Final Status",
+      "gsCol": "finalStatus",
       "code": "fs",
       "type":"radio",
       "choices": {
@@ -122,12 +139,14 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Note in Trap",
+      "gsCol": "noteTrap",
       "code": "nit",
       "type": "bool"
     }
   ],
   "postmatch": [
     { "name": "Driver Skill",
+      "gsCol": "driverSkill",
       "code": "ds",
       "type": "radio",
       "choices": {
@@ -139,6 +158,7 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Defense Rating",
+      "gsCol": "defenseRating",
       "code": "dr",
       "type": "radio",
       "choices": {
@@ -151,6 +171,7 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Speed Rating",
+      "gsCol": "speedRating",
       "code": "sr",
       "type": "radio",
       "choices": {
@@ -163,23 +184,28 @@ var config_data = `
       "defaultValue":"3"
     },
     { "name": "Died/Immobilized",
+      "gsCol": "died",
       "code": "die",
       "type": "bool"
     },
     { "name": "Tippy<br>(almost tipped over)",
+      "gsCol": "tippy",
       "code": "tip",
       "type": "bool"
     },
     { "name": "Dropped Notes (>2)",
+      "gsCol": "dropped2pNotes",
       "code": "dn",
       "type": "bool"
     },
     { "name": "Make good<br>alliance partner?",
+      "gsCol": "goodPartner",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
       "type": "bool"
     },
     { "name": "Comments",
+      "gsCol": "comments",
       "code": "co",
       "type": "text",
       "size": 15,
